@@ -1,0 +1,26 @@
+<div class="category-slider-list">
+
+    <ul>
+
+        <li
+            :active="id == -1"
+        >
+            <i class="fa fa-home"></i>
+            <span
+                v-on:click="_onJumpCategory({id: -1})"
+            >{{translate('home')}}</span>
+        </li>
+
+
+        <li
+            v-for="item in list"
+            :active="id == item.id"
+        >
+            <i></i>
+            <span
+                v-on:click="_onJumpCategory(item)"
+            >{{language == 'en' ? item.name_en : item.name}}</span>
+        </li>
+    </ul>
+
+</div>

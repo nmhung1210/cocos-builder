@@ -1,0 +1,29 @@
+.category-slider-list {
+    width: 200px;
+
+    ul {
+        padding: 15px;
+        border: 1px solid #666;
+
+        li {
+            font-size: 14px;
+            line-height: 28px;
+            color: #666;
+            transition: color 0.1s;
+
+            &[active] {
+                color: #65a7eb;
+            }
+
+            i {
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+            }
+
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+}

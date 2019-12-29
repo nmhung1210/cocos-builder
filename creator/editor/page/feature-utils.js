@@ -1,0 +1,1 @@
+const e=require("fs"),r=require("path"),t=require("../../share/default-features");let a={load(){let a=r.join(Editor.remote.App.home,"features.json");try{let r=JSON.parse(e.readFileSync(a,"utf8"));return Object.assign(t,r),r=t}catch(e){return t}}};module.exports=a;

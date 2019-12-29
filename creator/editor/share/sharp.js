@@ -1,0 +1,1 @@
+let r;r=Editor.dev?"sharp":"sharp",module.exports=require(r);

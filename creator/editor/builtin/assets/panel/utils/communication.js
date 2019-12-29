@@ -1,0 +1,1 @@
+"use strict";let e={context:"popup-context-menu",create:"popup-create-menu",search:"popup-search-menu",sort:"popup-sort-menu"};exports.popup=function(t,o){Editor.Selection.contexts("node");Editor.Ipc.sendToMain(`assets:${e[t]}`,o.x,o.y,o.assetType,o.allowAssign||!1,o.id,o.copyEnable)};

@@ -1,0 +1,16 @@
+<div class="search" draggable="true"
+    @dragstart="onDragStart"
+    @dragend="onDragEnd"
+>
+    <ul>
+        <template
+            v-for="node in nodes"
+        >
+
+            <node
+                v-if="onUpdateFilter(node, text, uuids)"
+                :node="node"
+            ></node>
+        </template>
+    </ul>
+</div>

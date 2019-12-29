@@ -1,0 +1,21 @@
+<div class="pay-popup">
+    <div class="frame">
+    <div class="mask"></div>
+    <div class="win">
+        <div class="header">
+        <i class="fa fa-times"
+            v-on:click="close"
+        ></i>
+        </div>
+        <div class="info">{{translate('popup-pay')}}</div>
+        <div class="buttons">
+        <a
+            v-on:click="success"
+        >{{translate('pay-success')}}</a>
+        <a
+            v-on:click="failure"
+        >{{translate('pay-failure')}}</a>
+        </div>
+    </div>
+    </div>
+</div>

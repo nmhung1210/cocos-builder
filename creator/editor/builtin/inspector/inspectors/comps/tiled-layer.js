@@ -1,0 +1,1 @@
+"use strict";Vue.component("cc-tiled-layer",{dependencies:["packages://inspector/share/blend.js"],template:'\n    <cc-array-prop :target.sync="target.sharedMaterials"></cc-array-prop>\n\n  ',props:{target:{twoWay:!0,type:Object},multi:{twoWay:!0,type:Boolean}}});

@@ -1,0 +1,104 @@
+.package-item {
+    flex: 1;
+    margin-left: 20px;
+    border: 1px solid #68707f;
+    font-size: 14px;
+    color: #666;
+
+    .crumbs {
+        padding: 10px 20px;
+
+        span[allow] {
+            cursor: pointer;
+        }
+    }
+
+    .item {
+        display: flex;
+
+        .image {
+            padding: 10px;
+            width: 180px;
+
+            img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .info {
+            flex: 1;
+            padding: 15px;
+            line-height: 28px;
+
+            .name {
+                font-size: 24px;
+
+                span {
+                    font-size: 16px;
+                    display: inline-block;
+                    background: #bfc8d1;
+                    padding: 2px 15px;
+                    border-radius: 12px;
+                    color: #fff;
+                    margin-left: 15px;
+                    line-height: 20px;
+                }
+            }
+
+            .buttons {
+                text-align: right;
+
+                .download {
+                    padding: 2px 15px;
+                    border-radius: 4px;
+                    background: #65a7eb;
+                    color: #fff;
+                    font-size: 16px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .introduction {
+
+        .header {
+            background: #ebeef1;
+            font-size: 16px;
+            padding: 0 15px;
+            line-height: 36px;
+        }
+
+        .content {
+            padding: 15px;
+            display: flex;
+        }
+
+        ui-markdown {
+            flex: 1;
+            width: 0;
+        }
+
+        // markdown 里面的 css
+        ui-markdown::shadow {
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            h3, h4, h5, h6 {
+                font-size: 16px;
+            }
+
+            p {
+                margin: 6px 0;
+            }
+        }
+    }
+}

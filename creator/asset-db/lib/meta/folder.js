@@ -1,0 +1,1 @@
+"use strict";const e=require("fire-fs"),r=require("./raw-asset");module.exports=class extends r{constructor(e){super(e),this.isSubpackage=!1,this.subpackageName=""}export(r,s,t){e.mkdirSync(r),t&&t()}static defaultType(){return"folder"}static version(){return"1.0.1"}};

@@ -1,0 +1,5 @@
+quickgame-toolkit/node_modules/*
+.vscode/
+quickgame-toolkit/package-lock.json
+
+package/node_modules/*

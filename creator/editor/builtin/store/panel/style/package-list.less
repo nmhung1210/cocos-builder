@@ -1,0 +1,145 @@
+.package-list {
+    flex: 1;
+    margin-left: 20px;
+
+    .tabs {
+        font-size: 16px;
+        line-height: 32px;
+
+        &:after{
+            display: block;
+            clear: both;
+            content: "";
+            visibility: hidden;
+            height: 0
+        } 
+
+        li {
+            float: left;
+            padding: 0 26px;
+            background: #68707f;
+            color: #eee;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid #68707f;
+            border-radius: 4px 4px 0 0;
+            transition: background 0.1s, color 0.1s;
+
+            &[active] {
+                color: #68707f;
+                background: #fff;
+                border-bottom: none;
+                height: 33px;
+            }
+        }
+    }
+
+    .list {
+        margin-top: -1px;
+        padding: 10px 10px 10px 0;
+        border: 1px solid #68707f;
+
+        .ul {
+
+            &:after{
+                display: block;
+                clear: both;
+                content: "";
+                visibility: hidden;
+                height: 0
+            }
+
+            li {
+                padding: 0 0 10px 10px;
+                box-sizing: border-box;
+                width: 50%;
+                float: left;
+
+                .item {
+                    display: flex;
+                    border: 1px solid #f0f0f0;
+                    height: 90px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #f0f0f0;
+                    }
+
+                    .image {
+                        padding: 5px;
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 12px;
+                        }
+                    }
+
+                    .info {
+                        padding: 8px;
+                        color: #666;
+                        font-size: 14px;
+                        line-height: 24px;
+                        white-space: nowrap;
+                        overflow: hidden;
+
+                        .name {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        .category {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        .star {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+
+        .loading {
+            color: #666;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .empty {
+            background: url(http://store.cocos.com/static/images/not.png) no-repeat center 90px;
+            padding: 280px 0 40px 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #999;
+            line-height: 40px;
+
+            .devlop {
+                cursor: pointer;
+                color: #65a7eb;
+            }
+        }
+
+        .page {
+            text-align: center;
+            color: #999;
+            padding: 10px 20px;
+            
+            span {
+                padding: 4px 8px;
+                border: 1px solid #999;
+                margin-right: 6px;
+                cursor: pointer;
+                transition: background 0.3s, color 0.3s;
+
+                &:hover, &[active] {
+                    background: #999;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+}

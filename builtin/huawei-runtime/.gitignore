@@ -1,0 +1,5 @@
+.vscode/
+
+package/node_modules/*
+
+quickgame-toolkit/node_modules/*

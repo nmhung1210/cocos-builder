@@ -1,0 +1,46 @@
+<dom-module id="scene-view">
+  <link rel="import" type="css" href="scene-view.css">
+
+  <template>
+    <style>
+      #engine-canvas {
+        position:absolute
+      }
+    </style>
+
+    <!-- engine canvas -->
+    <canvas id="engine-canvas"></canvas>
+
+    <!-- grid -->
+    <scene-grid id="grid" class="fit"
+      show-label-h
+      show-label-v
+    >
+    </scene-grid>
+
+    <!-- svg gizmos -->
+    <scene-gizmo id="gizmosView" class="fit"></scene-gizmo>
+
+    <!-- help text -->
+    <pre id="helpText">
+      [[_T('SCENE.pan_hint')]]
+    </pre>
+
+    <!-- edit mode -->
+    <div id="editButtons" class="overlaying-buttons layout horizontal center" hidden="[[!_inEditMode(mode)]]">
+      <img style="margin-right: 10px" src="[[_editModeIcon(mode)]]">
+      <ui-button on-click="_onSaveEditMode">
+        [[_T('SHARED.save')]]
+      </ui-button>
+      <ui-button on-click="_onCloseEditMode">
+        [[_T('SHARED.close')]]
+      </ui-button>
+    </div>
+  </template>
+
+  <script type="text/javascript">
+    Editor.require('app://editor/page/gizmos/2d/init.js');
+  </script>
+
+  <script type="text/javascript" src="scene-view.js"></script>
+</dom-module>

@@ -1,0 +1,127 @@
+.download-manager {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    height: 100%;
+    width: 240px;
+    padding: 0 0 30px 0;
+    box-sizing: border-box;
+    background: #eee;
+    z-index: 9;
+    border-left: 1px solid #aaa;
+    transition: right 0.4s;
+
+    .download-content {
+        width: 240px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        color: #666;
+
+        .header {
+            padding: 0 15px;
+            line-height: 40px;
+            border-bottom: 1px solid #aaa;
+            font-size: 14px;
+
+            span.open {
+                float: right;
+                color: blue;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        .list {
+            overflow: auto;
+            flex: 1;
+
+            li {
+                display: flex;
+                padding: 10px 15px;
+                cursor: default;
+
+                &:hover {
+                    background: #DDD;
+                }
+
+                .info {
+                    width: 136px;
+                    line-height: 20px;
+
+                    & > div {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    & > .date {
+                        color: #aaa;
+                        text-indent: 2px;
+                    }
+                }
+
+                .oac {
+                    width: 75px;
+                    line-height: 40px;
+                    text-align: right;
+                    position: relative;
+                    text-align: center;
+
+                    span {
+                        display: inline;
+                        position: relative;
+                        top: -1px;
+                    }
+
+                    i {
+                        // display: none;
+                        padding: 2px;
+                        margin: 2px;
+                        cursor: pointer;
+                        color: #aaa;
+                    }
+
+                    .progress {
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -20px;
+                        top: 0;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid #999;
+                        border-radius: 22px;
+                        animation: download-progress 5s linear infinite;
+
+                        i {
+                            width: 2px;
+                            height: 2px;
+                            position: absolute;
+                            top: -3px;
+                            left: 17px;
+                            border-radius: 4px;
+                            background: #999;
+                            display: block;
+                            margin: 0;
+                        }
+                    }
+
+                    .string {
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -20px;
+                        top: 0;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes download-progress {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,43 @@
+<link rel="import" href="packages://ui-kit/widget/index.html">
+<dom-module id="sprite-editor">
+    <link rel="import" type="css" href="sprite-editor.css">
+    <template>
+        <editor-toolbar>
+            <span class="flex-1 layout horizontal">
+                <editor-slider id="scaleSlider" disabled="{{!hasContent}}" type="int" class="flex-1" value="{{scale}}" max="{{maxScale}}" min="{{minScale}}"></editor-slider>
+            </span>
+            <span class="layout horizontal">
+                <editor-button disabled="{{!dirty}}" class="red" on-click="_onRevert">
+                    <i class="fa fa-close"></i>
+                </editor-button>
+                <editor-button disabled="{{!dirty}}" class='green' on-click="_onApply">
+                    <i class="fa fa-check"></i>
+                </editor-button>
+            </span>
+        </editor-toolbar>
+        <div id="content" class="flex-1" on-mousewheel="onMouseWheel">
+            <canvas id="canvas"></canvas>
+            <svg id="svg"></svg>
+        </div>
+        <div id="pad" class="layout vertical">
+            <div class="title">[[_T('SPRITE_EDITOR.border')]]</div>
+            <div class="layout vertical">
+                <div class="layout horizontal center">
+                    <div class="flex-2 label">[[_T('SPRITE_EDITOR.left')]]</div>
+                    <editor-unit-input id="inputL" disabled="{{!hasContent}}" min="0" on-value-changed="_onInputChanged" class="flex-2" value="{{leftPos}}"></editor-unit-input>
+                    <div class="flex-2 label">[[_T('SPRITE_EDITOR.right')]]</div>
+                    <editor-unit-input id="inputR" disabled="{{!hasContent}}" min="0" on-value-changed="_onInputChanged" class="flex-2" value="{{rightPos}}"></editor-unit-input>
+                </div>
+                <span class="space"></span>
+                <div class="layout horizontal center">
+                    <div class="flex-2 label">[[_T('SPRITE_EDITOR.top')]]</div>
+                    <editor-unit-input id="inputT" disabled="{{!hasContent}}" min="0" on-value-changed="_onInputChanged" class="flex-2" value="{{topPos}}"></editor-unit-input>
+                    <div class="flex-2 label">[[_T('SPRITE_EDITOR.bottom')]]</div>
+                    <editor-unit-input id="inputB" disabled="{{!hasContent}}" min="0" on-value-changed="_onInputChanged" class="flex-2" value="{{bottomPos}}"></editor-unit-input>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript" src="sprite-editor.js"></script>
+</dom-module>

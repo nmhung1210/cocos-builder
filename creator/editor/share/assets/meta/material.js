@@ -1,0 +1,1 @@
+"use strict";const s=require("./custom-asset");module.exports=class extends s{constructor(s){super(s),this.dataAsSubAsset=null}static version(){return"1.0.2"}static defaultType(){return"material"}import(s,t){if(this._assetdb.isSubAssetByPath(s))return this.dataAsSubAsset&&this.importJSON(s,this.dataAsSubAsset),t();super.import(s,t)}};

@@ -1,0 +1,1 @@
+"use strict";module.exports={"reset-layout"(e,t){this._resetLayoutInfo=t},dragstart(){this.$.dropArea.hidden=!1},dragend(){this.$.dropArea.hidden=!0},"project-profile-updated"(e,t){_Scene.projectProfileUpdated(t)}};

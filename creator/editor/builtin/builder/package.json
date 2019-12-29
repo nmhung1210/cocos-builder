@@ -1,0 +1,98 @@
+{
+  "name": "builder",
+  "version": "0.1.4",
+  "description": "Fireball Project Builder",
+  "author": "Firebox Technology",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.project.title/i18n:MAIN_MENU.panel.build": {
+      "message": "builder:open",
+      "accelerator": "CmdOrCtrl+Shift+B"
+    }
+  },
+  "panel": {
+    "main": "panel/builder.js",
+    "type": "dockable",
+    "title": "i18n:MAIN_MENU.panel.build",
+    "width": 500,
+    "min-width": 650,
+    "height": 700,
+    "min-height": 300,
+    "save": false
+  },  
+  "profiles": {
+    "project": {
+      "title": "",
+      "packageName": "",
+      "startScene": "",
+      "excludeScenes": [],
+
+      "includeSDKBox": false,
+
+      "orientation": {
+        "landscapeRight": true,
+        "landscapeLeft": true,
+        "portrait": false,
+        "upsideDown": false
+      },
+      "webOrientation" : "auto",
+      "inlineSpriteFrames": true,
+      "inlineSpriteFrames_native": true,
+      "mergeStartScene": false,
+      "optimizeHotUpdate": false,
+      "md5Cache": false,
+
+      "encryptJs": true,
+      "xxteaKey": "",
+      "zipCompressJs": true,
+      "wechatgame": {
+        "appid": "wx6ac3f5090a6b99c5",
+        "orientation": "portrait",
+        "REMOTE_SERVER_ROOT": "",
+        "subContext": "",
+        "separate_engine": false
+      },
+      "baidugame": {
+        "appid": "testappid",
+        "orientation": "portrait",
+        "REMOTE_SERVER_ROOT": "",
+        "subContext": ""
+      },
+      "qqplay": {
+        "orientation": "portrait",
+        "zip": false,
+        "REMOTE_SERVER_ROOT": ""
+      },
+      "fb-instant-games": {
+      },
+      "android-instant": {
+        "REMOTE_SERVER_ROOT": "",
+        "pathPattern": "",
+        "scheme": "https",
+        "host": "",
+        "skipRecord": false,
+        "recordPath": ""
+      },
+      "appBundle": false
+    },
+    "local":{
+      "platform": "web-mobile",
+      "actualPlatform": "",
+      "template": "link",
+      "buildPath": "./build",
+      "debug": false,
+      "sourceMaps": false,
+      "embedWebDebugger": false,
+      "previewWidth": "1280",
+      "previewHeight": "720",
+      "useDebugKeystore": true,
+      "keystorePath": "",
+      "keystorePassword": "",
+      "keystoreAlias": "",
+      "keystoreAliasPassword": "",
+      "apiLevel": "",
+      "appABIs": [],
+      "vsVersion": "auto"
+    }
+  }
+}

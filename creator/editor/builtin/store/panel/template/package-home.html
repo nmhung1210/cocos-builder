@@ -1,0 +1,135 @@
+<section class="package-home">
+
+    <div class="banner"
+        v-if="banners && banners.length > 0"
+    >
+        <ul>
+            <li
+                v-for="(index,item) in banners"
+                :active="currentBanner == index"
+                v-on:click="_onJumpBanner(item.url)"
+            >
+                <img 
+                    :src="_getBannerImg(item.img)"
+                />
+            </li>
+        </ul>
+        <div class="dots">
+            <span
+                v-for="(index,item) in banners"
+                :active="currentBanner == index"
+                v-on:click="_onBannerChanged(index)"
+            ></span>
+        </div>
+    </div>
+
+    <ul class="tabs">
+        <li
+            :active="type == 'free'"
+            v-on:click="_onTypeChanged('free')"
+        >{{translate('free')}}</li>
+        <li
+            :active="type == 'pay'"
+            v-on:click="_onTypeChanged('pay')"
+        >{{translate('pay')}}</li>
+    </ul>
+
+    <div class="list">
+    
+        <div class="empty"
+            v-if="!loading && list && list.length == 0"
+        >
+            <div>{{translate('info')}}</div>
+            <div class="devlop"
+                v-on:click="_onOpenDevelop"
+            >{{translate('develop')}}</div>
+        </div>
+
+        <div class="loading"
+            v-if="loading"
+        >
+            {{translate('load')}}...
+        </div>
+
+        <ul class="items"
+            v-if="!loading"
+        >
+
+            <li
+                v-for="item in list"
+                v-on:click="_onJumpPackage(item)"
+            >
+                <div class="item">
+
+                    <div class="image">
+                        <img
+                            :src="_getUrl(item.icon)"
+                         />
+                    </div>
+
+                    <div class="info">
+                        <div class="name">{{_getPackageName(item)}}</div>
+                        <div class="category">{{_getCategory(item)}}</div>
+                        <div class="star">
+                            
+                            <i class="fa fa-star-half-o"
+                                v-if="item.score > 1 && item.score < 1"
+                            ></i>
+                            <i class="fa fa-star"
+                                v-if="item.score >= 1"
+                            ></i>
+                            
+                            <i class="fa fa-star-half-o"
+                                v-if="item.score > 1 && item.score < 2"
+                            ></i>
+                            <i class="fa fa-star"
+                                v-if="item.score >= 2"
+                            ></i>
+                            
+                            <i class="fa fa-star-half-o"
+                                v-if="item.score > 2 && item.score < 3"
+                            ></i>
+                            <i class="fa fa-star"
+                                v-if="item.score >= 3"
+                            ></i>
+                            
+                            <i class="fa fa-star-half-o"
+                                v-if="item.score > 3 && item.score < 4"
+                            ></i>
+                            <i class="fa fa-star"
+                                v-if="item.score >= 4"
+                            ></i>
+
+                            <i class="fa fa-star-half-o"
+                                v-if="item.score > 4 && item.score < 5"
+                            ></i>
+                            <i class="fa fa-star"
+                                v-if="item.score >= 5"
+                            ></i>
+
+                            <i class="fa fa-star-o"
+                                v-if="item.score <= 4"
+                            ></i>
+                            <i class="fa fa-star-o"
+                                v-if="item.score <= 3"
+                            ></i>
+                            <i class="fa fa-star-o"
+                                v-if="item.score <= 2"
+                            ></i>
+                            <i class="fa fa-star-o"
+                                v-if="item.score <= 1"
+                            ></i>
+                            <i class="fa fa-star-o"
+                                v-if="item.score == 0"
+                            ></i>
+                        </div>
+                        <!--<div>免费/付费</div>-->
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+</section>

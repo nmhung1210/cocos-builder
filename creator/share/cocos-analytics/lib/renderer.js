@@ -1,0 +1,1 @@
+const{EventEmitter:e}=require("events");require("../../@base/electron-base-ipc");module.exports=new class extends e{trackEvent(e,t,r,n){}trackException(e){}};

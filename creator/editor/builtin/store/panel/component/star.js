@@ -1,0 +1,1 @@
+"use strict";const t=require("../lib/utils");exports.template=t.getTemplate("star"),exports.props=["score"],exports.data=function(){return{}},exports.methods={},exports.ready=function(){};

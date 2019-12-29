@@ -1,0 +1,43 @@
+{
+  "name": "package-asset",
+  "version": "0.0.1",
+  "description": "导入导出资源插件",
+  "author": "Knox",
+  "main": "main.js",
+  "scene-script": "scene-walker.js",
+  "panel.export": {
+    "main": "panel/export/index.js",
+    "type": "dockable",
+    "title": "Export Asset",
+    "min-width": 400,
+    "max-width": 400,
+    "width": 400,
+    "min-height": 480,
+    "max-height": 480,
+    "height": 480
+  },
+
+  "panel.import": {
+    "main": "panel/import/index.js",
+    "type": "dockable",
+    "title": "Import Asset",
+    "min-width": 500,
+    "max-width": 500,
+    "width": 500,
+    "min-height": 510,
+    "max-height": 510,
+    "height": 510
+  },
+
+  "profiles": {
+    "local": {
+      "current-resource": "",
+      "export-resource-path": "",
+      "select-all": false,
+      "folded-all": true,
+
+      "import-folder-path": "",
+      "out-path": ""
+    }
+  }
+}

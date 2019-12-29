@@ -1,0 +1,71 @@
+<div class="package-manager"
+    v-on:click="_onStopClick"
+>
+    <div class="package-content">
+        <div class="header">
+            <span>{{translate('title')}}</span>
+            <span>
+                <a
+                    :active="tab === 0"
+                    @click="_onChangeTab(0)"
+                >{{translate('local')}}</a>
+                <a
+                    :active="tab === 1"
+                    @click="_onChangeTab(1)"
+                >{{translate('global')}}</a>
+            </span>
+        </div>
+
+        <ul class="list"
+            v-if="tab === 0"
+        >
+
+            <li
+                v-for="item in local"
+            >
+                <div class="info">
+                    <div>{{item.name}}</div>
+                    <div class="date">{{item.ctime}}</div>
+                </div>
+
+                <div class="oac">
+                    <i class="fa fa-folder-open-o"
+                        :title="translate('open')"
+                        @click="_onOpenDir(item.path)"
+                    ></i>
+                    <i class="fa fa-trash"
+                        :title="translate('remove')"
+                        @click="_onRemovePackage(item.name, 'local')"
+                    ></i>
+                </div>
+            </li>
+
+        </ul>
+
+        <ul class="list"
+            v-if="tab === 1"
+        >
+
+            <li
+                v-for="item in global"
+            >
+                <div class="info">
+                    <div>{{item.name}}</div>
+                    <div class="date">{{item.ctime}}</div>
+                </div>
+
+                <div class="oac">
+                    <i class="fa fa-folder-open-o"
+                        :title="translate('open')"
+                        @click="_onOpenDir(item.path)"
+                    ></i>
+                    <i class="fa fa-trash"
+                        :title="translate('remove')"
+                        @click="_onRemovePackage(item.name, 'global')"
+                    ></i>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

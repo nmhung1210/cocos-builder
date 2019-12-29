@@ -1,0 +1,1 @@
+"use strict";const e=require("./native-asset");module.exports=class extends e{constructor(e){super(e),this.downloadMode=0}static version(){return"2.0.0"}static defaultType(){return"audio-clip"}createAsset(){let e=new cc.AudioClip;return e.loadMode=this.downloadMode,e}};

@@ -1,0 +1,98 @@
+<div class="download-manager"
+    v-on:click="_onStopClick"
+>
+    <div class="download-content">
+        <div class="header">
+            <span>{{translate('download')}}</span>
+            <span class="open"
+                v-on:click="_onClearAll"
+            >{{translate('clearAll')}}</span>
+        </div>
+        <ul class="list">
+
+            <template
+                v-for="item in log"
+            >
+                <li v-if="item">
+                    <div class="info">
+                        <div
+                            :title="_getPackageName(item)"
+                        >{{_getPackageName(item)}}</div>
+                         <!-- <div>{{item.file}}</div>  -->
+                         <div class="date">{{_getDate(item.timestamp)}}</div>
+                    </div>
+
+                    <!-- 下载进度圈 -->
+                    <div class="oac"
+                        v-if="item.status == 'download'"
+                    >
+                        <span class="progress">
+                            <i></i>
+                        </span>
+                        <span class="string">{{Math.floor(item.progress*100) + '%'}}</span>
+                    </div>
+
+                    <!-- 解压 -->
+                    <div class="oac"
+                        v-if="item.status == 'unzip'"
+                    >
+                        <span class="progress">
+                            <i></i>
+                        </span>
+                        <span class="string">{{translate('unzip')}}</span>
+                    </div>
+
+                    <!-- 安装 -->
+                    <div class="oac"
+                        v-if="item.status == 'install'"
+                    >
+                        <span class="progress">
+                            <i></i>
+                        </span>
+                        <span class="string">{{translate('install')}}</span>
+                    </div>
+
+                    <!-- 失败 -->
+                    <div class="oac"
+                        v-if="item.status == 'error'"
+                    >
+                        <span>{{translate('failure')}}</span>
+                        <i class="fa fa-trash" title="{{translate('remove_1')}}"
+                            v-on:click="_onRemove(item)"
+                        ></i>
+                    </div>
+
+                    <!-- 完成 -->
+                    <div class="oac"
+                        v-if="item.status == 'finish'"
+                    >
+                        <template
+                            v-if="item.type == 'package'"
+                        >
+                            <i class="fa fa-sign-in" title="{{translate('install')}}"
+                                v-on:click="_onInstall(item)"
+                            ></i>
+                            <i class="fa fa-trash" title="{{translate('remove')}}"
+                                v-on:click="_onRemove(item)"
+                            ></i>
+                        </template>
+
+                        <template
+                            v-else
+                        >
+                            <i class="fa fa-files-o" title="{{translate('copyFile')}}"
+                                v-on:click="_onCopyFile(item)"
+                            ></i>
+                            <i class="fa fa-trash" title="{{translate('remove')}}"
+                                v-on:click="_onRemove(item)"
+                            ></i>
+                        </template>
+                    </div>
+                </li>
+            </template>
+
+            
+
+        </ul>
+    </div>
+</div>

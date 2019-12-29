@@ -1,0 +1,193 @@
+.package-home {
+    flex: 1;
+    margin-left: 20px;
+
+    .banner {
+        position: relative;
+        border: 1px solid #68707f;
+        margin-bottom: 15px;
+        overflow: hidden;
+
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 0;
+        background-position: 50% 50%;
+        -webkit-background-size: 100%;
+        padding-top: 48%;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            transition: 0.4s;
+
+            li {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                float: left;
+                overflow: hidden;
+                transition: opacity 0.4s;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &[active] {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 6%;
+            left: 6%;
+            height: 14px;
+            cursor: pointer;
+
+            span {
+                width: 14px;
+                height:14px;
+                border-radius: 14px;
+                display: inline-block;
+                background: #ccc;
+                opacity: 0.8;
+                margin-right: 6px;
+
+                &[active] {
+                    background: #FFF;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .tabs {
+        font-size: 16px;
+        line-height: 32px;
+
+        &:after{
+            display: block;
+            clear: both;
+            content: "";
+            visibility: hidden;
+            height: 0
+        } 
+
+        li {
+            float: left;
+            padding: 0 26px;
+            background: #68707f;
+            color: #eee;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid #68707f;
+            border-radius: 4px 4px 0 0;
+            transition: background 0.1s, color 0.1s;
+
+            &[active] {
+                color: #68707f;
+                background: #fff;
+                border-bottom: none;
+                height: 33px;
+            }
+        }
+    }
+
+    .list {
+        margin-top: -1px;
+        padding: 10px 10px 10px 0;
+        border: 1px solid #68707f;
+
+        ul.items {
+
+            &:after{
+                display: block;
+                clear: both;
+                content: "";
+                visibility: hidden;
+                height: 0
+            }
+
+            li {
+                padding: 0 0 10px 10px;
+                box-sizing: border-box;
+                width: 50%;
+                float: left;
+
+                .item {
+                    display: flex;
+                    border: 1px solid #f0f0f0;
+                    height: 90px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #f0f0f0;
+                    }
+
+                    .image {
+                        padding: 5px;
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 12px;
+                        }
+                    }
+
+                    .info {
+                        padding: 8px;
+                        color: #666;
+                        font-size: 14px;
+                        line-height: 24px;
+                        white-space: nowrap;
+                        overflow: hidden;
+
+                        .name {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        .category {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        .star {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .loading {
+            color: #666;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .empty {
+            background: url(http://store.cocos.com/static/images/not.png) no-repeat center 90px;
+            padding: 280px 0 40px 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #999;
+            line-height: 40px;
+
+            .devlop {
+                cursor: pointer;
+                color: #65a7eb;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,77 @@
+<div style="margin:10px; height: 90%;" @click="handleEmptyAreaClick">
+    <div style="margin-top: 10px;" class="section">
+        <div style="display: flex; justify-content: flex-start; width: 100%;">
+            <div style="color: #BDBDBD; font-size: 24px; text-overflow: ellipsis; overflow: hidden; ">{{ game.name }}
+            </div>
+            <!-- <div v-if="devmode" @click="exitDevMode" style="font-size: 13px;min-width: 85px; margin-top: 6px; margin-left: 4px; color: #FC932B; cursor: pointer; width: 100%;">{{ utils_t("exit_devmode") }}</div> -->
+        </div>
+        <div
+            style="margin-top:4px; color: rgb(127, 127, 127); display: flex; justify-content: flex-start; width: 100%;">
+            AppID:&nbsp;{{ game.appid }}&nbsp;&nbsp;
+            <i @click.stop="handlePopMenuClick" class="icon-menu"
+                style="position: relative; color: rgb(189, 189, 189); cursor: pointer; margin-top: 2px;">
+                <div id="menu" :style="sty">
+                    <div @click="handleBindGameLogic" v-if="!hasBindGame"
+                        style="white-space: nowrap; color: rgb(51, 51, 51); font-style: normal; height: 30px; width: 100%; border-bottom: 1px solid black; line-height: 30px; text-align: center;">
+                        {{utils_t("bind_appid")}}
+                    </div>
+                    <div @click="handleUnbindGameLogic" v-if="hasBindGame"
+                        style="white-space: nowrap; color: rgb(51, 51, 51); font-style: normal; height: 30px; width: 100%; border-bottom: 1px solid black; line-height: 30px; text-align: center;">
+                        {{utils_t("unassociate")}}
+                    </div>
+                    <div @click="handleGotoAccountCenterLogic"
+                        style="white-space: nowrap; color: rgb(51, 51, 51); font-style: normal; height: 30px; width: 100%; line-height: 30px; text-align: center;">
+                        {{utils_t("account_center")}}
+                    </div>
+                </div>
+            </i>
+            <div v-if="devmode" @click="exitDevMode"
+                style="font-size: 13px; min-width: 85px; margin-left: 5px; color: #FC932B; cursor: pointer; margin-top: -1px;">
+                {{ utils_t("exit_devmode") }}</div>
+        </div>
+        <div style="margin-top:10px; color: rgb(127, 127, 127);">
+            {{utils_t("integrate_tips")}}
+        </div>
+    </div>
+    <div v-if="!hasBindGame" style="margin-bottom: 10px;">
+        <div style="margin-top: 10px;" v-for="service in offlineService" :key="service.service_id">
+            <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service" :hovered="true">
+            </service-item>
+        </div>
+        <div style="margin-top: 10px;" v-if="hasOffineService">
+            {{utils_t("require_appid_game")}}
+        </div>
+        <div style="margin-top: 10px;" v-for="service in onlineService" :key="service.service_id">
+            <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service" :hovered="false">
+            </service-item>
+        </div>
+    </div>
+    <div v-else style="margin-bottom: 10px;">
+        <div v-if="iscompanygame">
+            <div style="margin-top: 10px;" v-for="service in companyService" :key="service.service_id">
+                <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service"
+                    :hovered="true"></service-item>
+            </div>
+            <div style="margin-top: 10px;" v-if="personService.length>0">
+                {{utils_t("require_person_game")}}
+            </div>
+            <div style="margin-top: 10px;" v-for="service in personService" :key="service.service_id">
+                <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service"
+                    :hovered="false"></service-item>
+            </div>
+        </div>
+        <div v-else>
+            <div style="margin-top: 10px;" v-for="service in personService" :key="service.service_id">
+                <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service"
+                    :hovered="true"></service-item>
+            </div>
+            <div style="margin-top: 10px;" v-if="companyService.length>0">
+                {{utils_t("require_company_game")}}
+            </div>
+            <div style="margin-top: 10px;" v-for="service in companyService" :key="service.service_id">
+                <service-item @click.stop="handleServiceItemClick(service.service_id)" :service="service"
+                    :hovered="false"></service-item>
+            </div>
+        </div>
+    </div>
+</div>

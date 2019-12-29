@@ -1,0 +1,74 @@
+<section class="package-item">
+
+    <div class="crumbs">
+        <span allow
+            v-on:click="_onJumpCategory({id: -1})"
+        >{{translate('home')}}</span>
+        <span>></span>
+        <span>{{_getPackageCategory(info)}}</span>
+    </div>
+
+    <div class="item">
+        <div class="image">
+            <img
+                :src="_getPackageIcon(info)"
+            />
+        </div>
+        <div class="info">
+            <div class="name">{{_getPackageName(info)}}<span>v{{_getPackageVersion(info)}}</span></div>
+            <div class="category">{{translate('category')}}{{_getPackageCategory(info)}}</div>
+            <div class="author">{{translate('author')}}{{_getPackageUser(info)}}</div>
+            <div class="Requirement">{{translate('requirement')}}{{_getPackageDemand(info)}}</div>
+            <star
+                :score="info ? info.score : 5"
+            ></star>
+            <div class="buttons"
+                v-if="info"
+            >
+                <template
+                    v-if="info.payment == 0"
+                >
+                    <span class="download"
+                        v-on:click="_onDownload"
+                    >{{translate('download')}}</span>
+                </template>
+                <template
+                    v-if="info.payment == 1"
+                >
+                    <span class="download"
+                        v-if="pkg.if_buy == 0"
+                        v-on:click="_onBuy"
+                    >
+                        {{_getPackagePrice(info, pkg)}}
+                    </span>
+                    <span class="download"
+                        v-if="pkg.if_buy == 1"
+                        v-on:click="_onDownload"
+                    >{{translate('download')}}</span>
+                    <span class="download"
+                        v-if="pkg.if_buy !== 0 && pkg.if_buy !== 1"
+                        v-on:click="_onCannotBuy"
+                    >
+                        {{_getPackagePrice(info, pkg)}}
+                    </span>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <div class="introduction">
+        <div class="header">{{translate('introduction')}}</div>
+        <div class="content">
+            <ui-markdown v-el:view></ui-markdown>
+        </div>
+    </div>
+
+    <!--<div class="screenshot"></div>-->
+
+    <!-- 展示用户评分的区域 -->
+    <!--<div class="rating"></div>-->
+
+    <!-- 评论，包括文字评论和评分 -->
+    <!--<div class="comment"></div>-->
+
+</section>

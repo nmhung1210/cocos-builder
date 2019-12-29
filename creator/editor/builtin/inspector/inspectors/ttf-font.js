@@ -1,0 +1,1 @@
+(()=>{"use strict";return{dependencies:["packages://inspector/share/meta-header.js"],template:'\n      <cc-meta-header\n        :target="target"\n        icon="unpack://static/icon/assets/ttf-font.png"\n      ></cc-meta-header>\n\n      <div class="props flex-1">\n        <ui-prop name="Font Family" type="string" v-value="target.fontFamily"></ui-prop>\n      </div>\n    '}})();

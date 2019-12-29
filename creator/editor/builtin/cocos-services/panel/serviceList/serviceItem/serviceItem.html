@@ -1,0 +1,23 @@
+<div>
+    <ui-hint class="bottom" :style="sty" v-el:tips position="20px">{{service.service_name}}</ui-hint>
+    <div :class="['serviceItem', !hovered && 'disabled']">
+        <div style="display:flex;justify-content:space-between; padding: 8px;">
+            <div style="display: flex; justify-content: flex-start; width: calc(100% - 50px)">
+                <img :src="service.service_icon" :style="imgStyle" class='img[src=""],img:not([src]){opacity: 0;}"' />
+                <div style="color: #BDBDBD; font-size: 18px; margin-left:4px; margin-top:2px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: calc(100% - 40px);" @mouseenter="enter" @mouseleave="leave">
+                    {{ service.service_name }}
+                </div>
+                <img v-if="service.enable && hasUpdate" :src="getRealPath('update.png')" style="width: 16px; height: 16px; margin-top: 2px; margin-right: 4px;" />
+            </div>
+            <div v-if="!service.enable" style="background: rgb(31, 31, 31); color: #717171; border-radius: 3px; text-align: center; min-width: 50px; width: 50px; height: 18px; padding-top: 2px;">
+                {{utils_t("disenable")}}
+            </div>
+            <div v-if="service.enable" style="background: rgb(31, 31, 31); color: #FC932B; border-radius: 3px; text-align: center; min-width: 50px;  width: 50px; height: 18px; padding-top: 2px;">
+                {{utils_t("enable")}}
+            </div>
+        </div>
+        <div style="padding-left: 8px; padding-right: 8px; font-size:12px; color: #7F7F7F; padding-bottom: 5px;">
+            {{ title }}
+        </div>
+    </div>
+</div>

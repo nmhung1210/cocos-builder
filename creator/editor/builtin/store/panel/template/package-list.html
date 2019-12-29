@@ -1,0 +1,113 @@
+<section class="package-list">
+
+    <ul class="tabs">
+        <li
+            :active="type == 'free'"
+            v-on:click="_onTypeChanged('free')"
+        >{{translate('free')}}</li>
+        <li
+            :active="type == 'pay'"
+            v-on:click="_onTypeChanged('pay')"
+        >{{translate('pay')}}</li>
+    </ul>
+
+    <div class="list">
+    
+        <div class="empty"
+            v-if="!loading && list && list.length == 0"
+        >
+            <div>{{translate('info')}}</div>
+            <div class="devlop"
+                v-on:click="_onOpenDevelop"
+            >{{translate('develop')}}</div>
+        </div>
+    
+        <div class="loading"
+            v-if="loading"
+        >
+            {{translate('load')}}...
+        </div>
+
+        <ul class="ul"
+            v-if="!loading && list && list.length"
+        >
+
+            <li
+                v-for="item in list"
+                v-on:click="_onJumpPackage(item)"
+            >
+                <div class="item">
+
+                    <div class="image">
+                        <img
+                            :src="_getUrl(item.icon)"
+                         />
+                    </div>
+
+                    <div class="info">
+                        <div class="name">{{_getPackageName(item)}}</div>
+                        <div class="category">{{_getCategory(item)}}</div>
+                        <star
+                            :score="item.score"
+                        ></star>
+                        <!--<div>免费/付费</div>-->
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="page"
+            v-if="!loading && list && list.length"
+        >
+            <span
+                v-on:click="jumpToPage(page - 1)"
+            >{{translate('prev')}}</span>
+
+            <!-- 后面不足，前面回补几个页码 -->
+            <span
+                v-if="page + 1 > totalPage && page - 4 >= 1"
+                v-on:click="jumpToPage(page - 4)"
+            >{{page - 4}}</span>
+            <span
+                v-if="page + 2 > totalPage && page - 3 >= 1"
+                v-on:click="jumpToPage(page - 3)"
+            >{{page - 3}}</span>
+
+            <span
+                v-if="page - 2 >= 1"
+                v-on:click="jumpToPage(page - 2)"
+            >{{page - 2}}</span>
+            <span
+                v-if="page - 1 >= 1"
+                v-on:click="jumpToPage(page - 1)"
+            >{{page - 1}}</span>
+            <span active>{{page}}</span>
+            <span
+                v-if="page + 1 <= totalPage"
+                v-on:click="jumpToPage(page + 1)"
+            >{{page + 1}}</span>
+            <span
+                v-if="page + 2 <= totalPage"
+                v-on:click="jumpToPage(page + 2)"
+            >{{page + 2}}</span>
+
+            <!-- 前面不足，后面补充几个页码 -->
+            <span
+                v-if="page - 2 < 1 && page + 3 <= totalPage"
+                v-on:click="jumpToPage(page + 3)"
+            >{{page + 3}}</span>
+            <span
+                v-if="page - 1 < 1 && page + 4 <= totalPage"
+                v-on:click="jumpToPage(page + 4)"
+            >{{page + 4}}</span>
+
+            <span
+                v-on:click="jumpToPage(page + 1)"
+            >{{translate('next')}}</span>
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,1 @@
+module.exports={messages:{"rapid-test"(){require("./core/exporter")._rapidTest()}}};

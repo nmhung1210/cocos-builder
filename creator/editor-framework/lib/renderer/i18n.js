@@ -1,0 +1,1 @@
+"use strict";const e=require("electron"),r=require("../share/i18n");let t=e.ipcRenderer.sendSync("editor:get-i18n-phrases");r.polyglot.extend(t),module.exports=r;

@@ -1,0 +1,86 @@
+<link rel="import" href="scene-view.html">
+
+<dom-module id="editor-scene">
+    <link rel="import" type="css" href="scene.css">
+
+    <template>
+
+        <div>
+            <i class="fa fa-search-plus"
+                on-click="_onZoomUp"
+            ></i>
+            <i class="fa fa-search-minus"
+                on-click="_onZoomDown"
+            ></i>
+            <i class="fa fa-search"
+                on-click="_onZoomReset"
+            ></i>
+            
+            <span style="margin:0px 5px;"> | </span>
+
+            <img class="align-item" src="../icon/align-top.png"
+                title="[[_T('SCENE.align_top')]]"
+                on-click="_onAlignTop"
+            >
+            <img class="align-item" src="../icon/align-v-center.png"
+                title="[[_T('SCENE.align_v_center')]]"
+                on-click="_onAlignVCenter"
+            >
+            <img class="align-item" src="../icon/align-bottom.png"
+                title="[[_T('SCENE.align_bottom')]]"
+                on-click="_onAlignBottom"
+            >
+            <img class="align-item" src="../icon/align-left.png"
+                title="[[_T('SCENE.align_left')]]"
+                on-click="_onAlignLeft"
+            >
+            <img class="align-item" src="../icon/align-h-center.png"
+                title="[[_T('SCENE.align_h_center')]]"
+                on-click="_onAlignHCenter"
+            >
+            <img class="align-item" src="../icon/align-right.png"
+                title="[[_T('SCENE.align_right')]]"
+                on-click="_onAlignRight"
+            >
+
+            <span style="margin:0px 5px;"> | </span>
+
+            <img class="distribute-item" src="../icon/distribute-top.png"
+                title="[[_T('SCENE.distribute_top')]]"
+                on-click="_onDistributeTop"
+            >
+
+            <img class="distribute-item" src="../icon/distribute-v-center.png"
+                title="[[_T('SCENE.distribute_v_center')]]"
+                on-click="_onDistributeVCenter"
+            >
+
+            <img class="distribute-item" src="../icon/distribute-bottom.png"
+                title="[[_T('SCENE.distribute_bottom')]]"
+                on-click="_onDistributeBottom"
+            >
+
+            <img class="distribute-item" class="distribute-item" src="../icon/distribute-left.png"
+                title="[[_T('SCENE.distribute_left')]]"
+                on-click="_onDistributeLeft"
+            >
+
+            <img class="distribute-item" src="../icon/distribute-h-center.png"
+                title="[[_T('SCENE.distribute_h_center')]]"
+                on-click="_onDistributeHCenter"
+            >
+
+            <img class="distribute-item" src="../icon/distribute-right.png"
+                title="[[_T('SCENE.distribute_right')]]"
+                on-click="_onDistributeRight"
+            >
+        </div>
+
+        <div id="border" class="border flex-1">
+            <editor-loader id="loader" mask text="[[_T('SHARED.loading')]]"></editor-loader>
+            <div id="dropArea" class="fit" hidden></div>
+        </div>
+    </template>
+
+    <script type="text/javascript" src="scene.js"></script>
+</dom-module>

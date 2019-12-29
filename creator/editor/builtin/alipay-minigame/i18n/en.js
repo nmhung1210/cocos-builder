@@ -1,0 +1,1 @@
+module.exports={platform_name:"Alipay Mini Game",screen_orientation:"Screen Orientation",horizontal_screen:"Landscape",vertical_screen:"Portrait",remote_url:"Remote URL",remote_url_hint:"Server address where the resource is stored"};

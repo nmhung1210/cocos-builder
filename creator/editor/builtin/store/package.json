@@ -1,0 +1,22 @@
+{
+  "name": "store",
+  "version": "0.0.1",
+  "description": "The package template for getting started.",
+  "author": "Cocos Creator",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/i18n:MAIN_MENU.package.store": {
+      "message": "store:open"
+    }
+  },
+  "panel": {
+    "main": "panel/index.html",
+    "type": "simple",
+    "title": "Store",
+    "width": 800,
+    "min-width": 720,
+    "height": 600,
+    "min-height": 500,
+    "devTools": false
+  }
+}

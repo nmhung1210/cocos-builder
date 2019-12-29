@@ -1,0 +1,12 @@
+{
+  "name": "project-exporter",
+  "version": "1.0.0",
+  "description": "Export project to Cocos2d-x",
+  "author": "Cocos Creator",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.developer.title/Human Tests/Test Export Assets": {
+      "message": "project-exporter:rapid-test"
+    }
+  }
+}

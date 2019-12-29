@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <link href="./style/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="app://node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="content"
+    :download="download"
+    :package="package"
+    v-on:click="_onClearClick"
+  >
+    <!-- 支付弹窗 -->
+    <pay-popup
+      v-if="pay"
+    ></pay-popup>
+
+    <!-- 顶部的工具栏 -->
+    <tools-bar></tools-bar>
+
+    <!-- 下载侧边栏 -->
+    <download
+      :language="language"
+    ></download>
+
+    <!-- 插件管理侧边栏 -->
+    <package
+      :language="language"
+    ></package>
+
+    <div class="main-content">
+
+      <!-- 顶部的导航区域 -->
+      <nav-header
+        :language="language"
+      ></nav-header>
+
+      <!-- 中间的主题区域 -->
+      <div class="package-content">
+
+        <div class="wrap">
+          <!-- 侧边的列表 -->
+          <category-slider-list
+            :language="language"
+            :id="id"
+          ></category-slider-list>
+
+          <!-- 首页 -->
+          <package-home
+            v-if="type == 'category' && id == -1"
+            :language="language"
+          ></package-home>
+
+          <!-- 列表页面 -->
+          <package-list
+            v-if="type == 'category' && id != -1"
+            :language="language"
+            :id="id"
+          ></package-list>
+
+          <!-- 详细页面 -->
+          <package-item
+            v-if="type == 'package'"
+            :language="language"
+            :id="id"
+          ></package-item>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+<script src="./script/index.js"></script>

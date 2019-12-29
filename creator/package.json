@@ -13,7 +13,7 @@
     "url": "https://github.com/cocos-creator/fireball/issues"
   },
   "scripts": {
-    "start": "election .",
+    "start": "electron . --path /project --build=\"platform=web-mobile;debug=false\"",
     "postinstall": "electron-rebuild"
   },
   "dependencies": {
@@ -46,11 +46,11 @@
     "detective": "4.5.0",
     "diff": "2.2.1",
     "download": "^6.2.5",
+    "electron": "^1.7.5",
     "electron-cookies": "1.1.0",
     "electron-devtools-installer": "^2.0.0",
     "electron-dl": "1.5.0",
     "electron-profile": "1.0.4",
-    "electron-rebuild": "~1.6.0",
     "escodegen": "1.9.0",
     "esprima": "4.0.0",
     "estraverse": "4.2.0",
@@ -144,6 +144,7 @@
   "devDependencies": {
     "check-dependencies": "^1.1.0",
     "devtron": "^1.1.0",
+    "electron-rebuild": "^1.6.1",
     "gulp-cached": "1.1.0",
     "gulp-changed": "1.3.0",
     "gulp-fb": "0.5.1",

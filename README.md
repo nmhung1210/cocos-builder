@@ -1,4 +1,5 @@
 # cocos-builder
+[![Build Status](https://travis-ci.org/nmhung1210/cocos-builder.svg?branch=master)](https://travis-ci.org/nmhung1210/cocos-builder)
 
 CocosCreator now is more popular and powerful for game development. 
 For advance user, there is a painful is that lacking of support for Linux & Docker stack.

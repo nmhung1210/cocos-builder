@@ -1,21 +1,10 @@
-dist: trusty
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+language: ruby
 
-language: node_js
-node_js: "8"
-cache: npm
+services:
+  - docker
 
 before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-install:
-  - npm install && npm link
-  - cd creator && npm install && npx electron-rebuild
+  - docker build -t nmhung1210/cocos-creator .
 
 script:
-  - cocos-creator --path /home/travis/build/nmhung1210/cocos-builder/templates/hello-world --build="platform=web-mobile"
+  - docker run -v /home/travis/build/nmhung1210/cocos-builder/templates/hello-world:/project nmhung1210/cocos-creator

@@ -1,8 +1,10 @@
 #!/bin/bash
+set -e
 
-Xvfb -ac -screen scrn 640x960x24 :9.0 &
-export DISPLAY=:9.0
+if [ "$1" = 'cocos-creator' ]; then
+  Xvfb -ac -screen scrn 1024x768x24 :9.0 &
+  export DISPLAY=:9.0
+  set -- npm start "$@"
+fi
 
-npx electron . --disable-gpu --path /project $@
-
-exit $?
+exec "$@"

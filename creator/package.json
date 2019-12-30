@@ -1,5 +1,5 @@
 {
-  "name": "CocosCreator",
+  "name": "cocos-builder",
   "version": "2.1.4",
   "language": "zh",
   "description": "Cocos Creator is a flexible, efficient and data-driven game development tool, focused on content creation.",
@@ -13,8 +13,7 @@
     "url": "https://github.com/cocos-creator/fireball/issues"
   },
   "scripts": {
-    "start": "electron . --path /project --build=\"platform=web-mobile;debug=false\"",
-    "postinstall": "electron-rebuild"
+    "start": "electron . --path /project --build=\"platform=web-mobile;debug=false\""
   },
   "dependencies": {
     "adbkit": "^2.11.0",
@@ -40,6 +39,7 @@
     "coffee-script": "1.10.0",
     "commander": "2.9.0",
     "compare-versions": "3.1.0",
+    "compressing": "^1.5.0",
     "convert-source-map": "1.4.0",
     "decompress": "4.0.0",
     "del": "3.0.0",
@@ -133,6 +133,7 @@
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.0.0",
     "vue": "^1.0.28",
+    "watch": "^1.0.2",
     "winston": "2.1.1",
     "xcode": "^1.0.0",
     "xml2js": "^0.4.19",

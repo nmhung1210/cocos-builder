@@ -1,21 +1,16 @@
-FROM node:8-slim as builder
-
-WORKDIR /cocos
-
-COPY creator/package.json creator/package.json
-
-RUN apt-get -y update && apt-get -y install git python2.7 python-pip build-essential
-
-RUN cd /cocos/creator && npm i
-
 FROM node:8-slim
 
 COPY . /cocos
-COPY --from=builder /cocos/creator/node_modules /cocos/creator/node_modules
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN apt-get -y update \
-  && apt-get -y install wget \
+  && apt-get -y install \
+  git \
+  libvips42 \
+  python2.7 \
+  python-pip \
+  build-essential \
+  wget \
   unzip \
   fontconfig \
   locales \
@@ -52,22 +47,28 @@ RUN apt-get -y update \
   libxtst6 \
   ca-certificates \
   fonts-liberation \
+  libappindicator1 \
   libnss3 \
   lsb-release \
   xdg-utils \
   xvfb \
   libvips42 \
-  curl
+  awscli \
+  curl 
 
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
 WORKDIR /cocos/creator
+
+RUN npm i && ./node_modules/.bin/electron-rebuild
 
 VOLUME [ "/project" ]
 
 ENV PLATFORM="web-mobile"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD [ "cocos-creator" ]
 
 
 

@@ -10,5 +10,7 @@ const projectDir = argv.path || process.cwd();
 const run = cmd => execSync(cmd, { stdio: "inherit" });
 process.chdir(resolve(__dirname, "..", "creator"));
 
-run("startx");
+if (require("fs").existsSync("/usr/local/bin/startx")) {
+  run("startx");
+}
 run(`npx electron . --path="${projectDir}" --build="${build}" `);

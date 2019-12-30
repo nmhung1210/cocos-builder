@@ -1,0 +1,22 @@
+{
+  "name": "cocos-builder",
+  "version": "2.1.4",
+  "description": "CocosCreator now is more popular and powerful for game development.  For advance user, there is a painful is that lacking of support for Linux & Docker stack.",
+  "main": "index.js",
+  "bin": {
+    "cocos-creator": "scripts/cocos-creator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmhung1210/cocos-builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmhung1210/cocos-builder/issues"
+  },
+  "homepage": "https://github.com/nmhung1210/cocos-builder#readme",
+  "dependencies": {
+    "yargs": "^15.0.2"
+  }
+}

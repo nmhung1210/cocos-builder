@@ -1,12 +1,12 @@
 {
-  "name": "cocos-builder",
+  "name": "CocosCreator",
   "version": "2.1.4",
-  "language": "zh",
+  "language": "en",
   "description": "Cocos Creator is a flexible, efficient and data-driven game development tool, focused on content creation.",
   "homepage": "http://cocos.com/creator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cocos-creator/fireball.git"
+    "url": "git+https://github.com/cocos-creator/fireball.git"
   },
   "author": "Xiamen Yaji Software Co., Ltd.",
   "bugs": {
@@ -124,7 +124,7 @@
     "svg.filter.js": "2.0.2",
     "svg.js": "2.2.5",
     "tap": "6.x",
-    "tap-mocha-reporter": "https://github.com/cocos-creator/tap-mocha-reporter.git",
+    "tap-mocha-reporter": "git+https://github.com/cocos-creator/tap-mocha-reporter.git",
     "tree-kill": "1.0.0",
     "typescript": "3.3.3333",
     "uglify-es": "3.3.9",
@@ -210,5 +210,6 @@
     "chokidar"
   ],
   "electronVersion": "1.7.5",
-  "main": "app.js"
+  "main": "app.js",
+  "license": "MIT"
 }

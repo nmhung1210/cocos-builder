@@ -93,7 +93,7 @@
     "jimp": "0.2.5",
     "js-sha3": "^0.8.0",
     "jsondiffpatch": "0.1.43",
-    "lodash": "4.17.13",
+    "lodash": "4.5.0",
     "marked": "^0.3.6",
     "max-rects-packing": "^0.1.7",
     "md5": "2.1.0",

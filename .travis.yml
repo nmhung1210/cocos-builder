@@ -5,7 +5,7 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
-      
+
 language: node_js
 node_js: "8"
 cache: npm
@@ -15,7 +15,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 install:
   - npm install && npm link
-  - cd creator && npm install && ./node_module/.bin/electron-rebuild
+  - cd creator && npm install && npx electron-rebuild
 
 script:
-  - cocos-creator --path templates/hello-world --build="platform=web-mobile"
+  - cocos-creator --path /home/travis/build/nmhung1210/cocos-builder/templates/hello-world --build="platform=web-mobile"

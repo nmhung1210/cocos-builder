@@ -44,7 +44,7 @@
     "decompress": "4.0.0",
     "del": "3.0.0",
     "detective": "4.5.0",
-    "diff": "2.2.1",
+    "diff": "3.5.0",
     "download": "^6.2.5",
     "electron": "^1.7.5",
     "electron-cookies": "1.1.0",

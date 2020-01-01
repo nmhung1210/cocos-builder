@@ -2,9 +2,6 @@ language: ruby
 
 services:
   - docker
-
-before_install:
-  - docker build -t nmhung1210/cocos-creator .
-
+  
 script:
-  - docker run -v /home/travis/build/nmhung1210/cocos-builder/templates/hello-world:/project nmhung1210/cocos-creator
+  - docker build -t nmhung1210/cocos-creator .

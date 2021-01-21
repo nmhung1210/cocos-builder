@@ -118,7 +118,7 @@
     "semver": "^6.3.0",
     "sharp": "0.17.0",
     "sinon": "1.17.2",
-    "socket.io": "1.3.7",
+    "socket.io": "2.4.0",
     "source-map": "0.5.3",
     "stream-combiner2": "1.1.1",
     "svg.filter.js": "2.0.2",

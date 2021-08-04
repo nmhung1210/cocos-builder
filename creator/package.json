@@ -137,7 +137,7 @@
     "winston": "2.1.1",
     "xcode": "^1.0.0",
     "xml2js": "^0.4.19",
-    "xmldom": "0.1.22",
+    "xmldom": "0.6.0",
     "xxhashjs": "0.2.1",
     "xxtea-node": "1.1.2",
     "yargs": "4.3.1"

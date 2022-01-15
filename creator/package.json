@@ -94,7 +94,7 @@
     "js-sha3": "^0.8.0",
     "jsondiffpatch": "0.1.43",
     "lodash": "4.17.13",
-    "marked": "^0.3.6",
+    "marked": "^4.0.10",
     "max-rects-packing": "^0.1.7",
     "md5": "2.1.0",
     "md5-file": "3.1.1",

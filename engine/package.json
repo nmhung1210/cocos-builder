@@ -14,7 +14,7 @@
     "build": "NODE_OPTIONS=\"--max-old-space-size=20148\" gulp build"
   },
   "devDependencies": {
-    "async": "1.5.2",
+    "async": "2.6.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-parser-opts": "1.0.1",
     "babel-plugin-transform-class-properties": "6.22.0",
